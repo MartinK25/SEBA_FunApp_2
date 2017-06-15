@@ -1,0 +1,19 @@
+{
+  "name": "seba_funapp",
+  "version": "1.0.0",
+  "description": "FunApp of Team 38",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinK25/SEBA_FunApp.git"
+  },
+  "author": "Martin Kiener",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinK25/SEBA_FunApp/issues"
+  },
+  "homepage": "https://github.com/MartinK25/SEBA_FunApp#readme"
+}
