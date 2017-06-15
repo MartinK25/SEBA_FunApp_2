@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/MartinK25/SEBA_FunApp/issues"
   },
-  "homepage": "https://github.com/MartinK25/SEBA_FunApp#readme"
+  "homepage": "https://github.com/MartinK25/SEBA_FunApp#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "@uirouter/angularjs": "^1.0.3",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.6"
+  }
 }
