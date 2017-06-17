@@ -1,28 +1,8 @@
 <-- index.html -->
-<h2>Users Listing</h2>
-<link rel="stylesheet" href="../../assets/css/main.css" />
-<table class="table" ng-if="users.length>0">
-    <tr>
-        <th>SNo.</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Contact No.</th>
-        <th>Actions</th>
-    </tr>
-    <tr ng-repeat="user in users">
-        <td>{{user._id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.contactNo}}</td>
-        <td>{{user.address}}</td>
-        <td>
-            <a ui-sref="edit({id:user._id})">Edit</a> |
-            <a href="#" ng-click="deleteUser(user._id)">Delete</a>
-        </td>
-    </tr>
-</table>
-<div ng-if="users.length==0">
-    No record found !!
-</div>
+
+<html>
+<body>
+
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -64,8 +44,8 @@
                     <img src="images/thumbs/04.jpg" alt="" />
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </a>
-                <a href="images/fulls/05.jpg">
-                    <img src="images/thumbs/05.jpg" alt="" />
+                <a href="../images/fulls/05.jpg">
+                    <img src="../images/thumbs/05.jpg" alt="" />
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </a>
             </div>
@@ -85,13 +65,45 @@
 
     <!-- Footer -->
     <footer id="footer">
-        <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+        <p>&copy; 2017 Untitled. All rights reserved. Created by Team 38. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
     </footer>
 
 </div>
 
 <!-- Scripts -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/jquery.poptrox.min.js"></script>
-<script src="../../assets/js/skel.min.js"></script>
-<script src="../../assets/js/main.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.poptrox.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+</body>
+
+
+
+
+
+<!--
+<h2>Users Listing</h2>
+<link rel="stylesheet" href="../../assets/css/main.css" />
+<table class="table" ng-if="users.length>0">
+    <tr>
+        <th>SNo.</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Contact No.</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="user in users">
+        <td>{{user._id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.contactNo}}</td>
+        <td>{{user.address}}</td>
+        <td>
+            <a ui-sref="edit({id:user._id})">Edit</a> |
+            <a href="#" ng-click="deleteUser(user._id)">Delete</a>
+        </td>
+    </tr>
+</table>
+<div ng-if="users.length==0">
+    No record found !!
+</div>
