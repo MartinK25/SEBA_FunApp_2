@@ -3,7 +3,10 @@
  */
 var express = require("express"),
     router = express.Router(),
-    user = require("../models/user.js");
+    user = require("../models/user.js"),
+    cors = require("cors");
+
+router.use(cors())
 
 router.get("/", function(req, res) {
     user.find({}, function(err, data) {
