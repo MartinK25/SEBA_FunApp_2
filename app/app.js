@@ -19,6 +19,10 @@
                 url: "/create",
                 templateUrl: "./views/user/create.html",
                 controller: "userController"
+            }).state("register", {
+                url: "/register",
+                templateUrl: "./views/user/register.html",
+                controller: "userController"
             }).state("edit", {
                 url: "/edit/:id",
                 templateUrl: "./views/user/create.html",

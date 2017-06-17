@@ -7,7 +7,7 @@ var mongoose = require("mongoose"),
 
 var userSchema = new Schema({
     _id: { type: objectId, auto: true },
-    pw: { type: String, required: true },
+    password: { type: String, required: true },
     name: { type: String, required: true },
     contactNo: { type: String, required: true },
     address: { type: String, required: true }
