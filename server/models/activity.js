@@ -15,7 +15,7 @@ var activitySchema = new Schema({
     versionKey: false
 });
 
-var user = mongoose.model('activities', activitySchema);
+var activity = mongoose.model('activities', activitySchema);
 
 /** what does that do?*/
-module.exports = activiy;
+module.exports = activity;

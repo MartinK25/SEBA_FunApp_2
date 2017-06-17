@@ -15,7 +15,7 @@
 
         if ($state.current.name == "activities") {
             $rootScope.Title = "activity Listing";
-            activityService.getactivities().then(function(res) {
+            activityService.getActivities().then(function(res) {
                 $scope.activities = res.data;
             }).catch(function(err) {
                 console.log(err);

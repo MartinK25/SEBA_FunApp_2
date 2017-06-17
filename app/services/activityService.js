@@ -14,23 +14,23 @@
         var url = "";
         return {
             getActivities: function() {
-                url = globalConfig.apiAddress + "/user";
+                url = globalConfig.apiAddress + "/activity";
                 return $http.get(url);
             },
             getActivity: function(id) {
-                url = globalConfig.apiAddress + "/user/" + id;
+                url = globalConfig.apiAddress + "/activity/" + id;
                 return $http.get(url);
             },
             createActivity: function(user) {
-                url = globalConfig.apiAddress + "/user";
+                url = globalConfig.apiAddress + "/activity";
                 return $http.post(url, user);
             },
             updateActivity: function(user) {
-                url = globalConfig.apiAddress + "/user/" + user._id;
+                url = globalConfig.apiAddress + "/activity/" + user._id;
                 return $http.put(url, user);
             },
             deleteActivity: function(id) {
-                url = globalConfig.apiAddress + "/user/" + id;
+                url = globalConfig.apiAddress + "/activity/" + id;
                 return $http.delete(url);
             }
         };

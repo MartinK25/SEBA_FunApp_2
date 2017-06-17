@@ -8,7 +8,7 @@
 <h2 ng-hide="user._id!=null">Activities</h2> -->
 
 
-
+{{activities}}
 <table class="table" ng-if="activities.length>0">
     <tr>
         <th>SNo.</th>
@@ -17,7 +17,7 @@
         <th>Contact No.</th>
         <th>Actions</th>
     </tr>
-    <tr ng-repeat="activity in activitys">
+    <tr ng-repeat="activity in activities">
         <td>{{activity._id}}</td>
         <td>{{activity.name}}</td>
         <td>{{activity.contactNo}}</td>

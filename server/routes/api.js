@@ -6,6 +6,9 @@ var express = require('express'),
 
 //routes for user api
 router.use("/user", require("../controllers/user.api"));
+//routes for activity api
+router.use("/activity", require("../controllers/activity.api"));
+
 
 //add here other api routes
 
