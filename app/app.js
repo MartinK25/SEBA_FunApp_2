@@ -23,6 +23,10 @@
                 url: "/register",
                 templateUrl: "./views/user/register.html",
                 controller: "userController"
+            }).state("activity", {
+                url: "/activities",
+                templateUrl: "./views/user/activity.html",
+                controller: "activityController"
             }).state("edit", {
                 url: "/edit/:id",
                 templateUrl: "./views/user/create.html",

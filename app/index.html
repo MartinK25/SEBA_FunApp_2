@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+   <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
     <script src="../node_modules/angular/angular.js"></script>
     <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
@@ -11,6 +12,8 @@
    <!-- <script src="services/service.js"></script> -->
     <script src="services/userService.js"></script>
     <script src="controllers/user.controller.js"></script>
+    <script src="services/activityService.js"></script>
+    <script src="controllers/activity.controller.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -22,6 +25,7 @@
             <li><a ui-sref="users">Home</a></li>
             <li><a ui-sref="create">Create</a></li>
             <li><a ui-sref="register">Register</a></li>
+            <li><a ui-sref="activity">Activities</a></li>
         </ul>
     </div>
 </nav>
