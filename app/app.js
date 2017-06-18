@@ -28,6 +28,10 @@
                 url: "/activities",
                 templateUrl: "./views/user/activity.html",
                 controller: "activityController"
+            }).state("userlist", {
+                url: "/userlist",
+                templateUrl: "./views/user/userlist.html",
+                controller: "userlistController"
             }).state("login", {
                 url: "/login",
                 templateUrl: "./views/login/login.view.html",
