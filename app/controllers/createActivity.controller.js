@@ -21,7 +21,7 @@
                 console.log(err);
             });
 
-            $scope.deleteactivity = function(id) {
+            $scope.deleteActivity = function(id) {
                 if (confirm('Are you sure to delete?')) {
                     activityService.deleteactivity(id).then(function(res) {
                         if (res.data == "deleted") {
@@ -35,7 +35,7 @@
         } else if ($state.current.name == "edit") {
             $rootScope.Title = "Edit activity";
             var id = $stateParams.id;
-            activityService.getactivity(id).then(function(res) {
+            activityService.getActivity(id).then(function(res) {
                 $scope.activity = res.data;
             }).catch(function(err) {
                 console.log(err);
@@ -43,7 +43,7 @@
 
             $scope.saveData = function(activity) {
                 if ($scope.activityForm.$valid) {
-                    activityService.updateactivity(activity).then(function(res) {
+                    activityService.updateActivity(activity).then(function(res) {
                         if (res.data == "updated") {
                             $state.go("activities");
                         }
@@ -57,7 +57,7 @@
             $scope.saveData = function(activity) {
                 $scope.IsSubmit = true;
                 if ($scope.activityForm.$valid) {
-                    activityService.createactivity(activity).then(function(res) {
+                    activityService.createActivity(activity).then(function(res) {
                         if (res.data == "created") {
                             $state.go("activities");
                         }

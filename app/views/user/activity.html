@@ -1,4 +1,9 @@
+
+
+
 <h2>Overview of activities</h2>
+
+{{activities}}
 
 <script src="../../services/activityService.js"></script>
 <script src="../../controllers/activity.controller.js"></script>
@@ -8,23 +13,27 @@
 <h2 ng-hide="user._id!=null">Activities</h2> -->
 
 
-{{activities}}
+
 <table class="table" ng-if="activities.length>0">
     <tr>
-        <th>SNo.</th>
         <th>Name</th>
-        <th>Address</th>
-        <th>Contact No.</th>
-        <th>Actions</th>
+        <th>Type</th>
+        <th>City</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Time</th>
     </tr>
     <tr ng-repeat="activity in activities">
-        <td>{{activity._id}}</td>
         <td>{{activity.name}}</td>
-        <td>{{activity.contactNo}}</td>
-        <td>{{activity.address}}</td>
+        <td>{{activity.type}}</td>
+        <td>{{activity.city}}</td>
+        <td>{{activity.location}}</td>
+        <td>{{activity.date}}</td>
+        <td>{{activity.time}}</td>
+        <td>{{activity._id}}</td>
         <td>
-            <a ui-sref="edit({id:activity._id})">Edit</a> |
-            <a href="#" ng-click="deleteactivity(activity._id)">Delete</a>
+            <a ui-sref="editActivity({id:activity._id})">Edit</a> |
+            <a href="#" ng-click="deleteActivity(activity._id)">Delete</a>
         </td>
     </tr>
 </table>

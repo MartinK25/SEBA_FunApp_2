@@ -24,10 +24,14 @@
                 url: "/createActivity",
                 templateUrl: "./views/user/createActivity.html",
                 controller: "activityController"
-            }).state("activity", {
+            }).state("activities", {
                 url: "/activities",
                 templateUrl: "./views/user/activity.html",
                 controller: "activityController"
+            }).state("editActivity", {
+                url: "/edit/:id",
+                templateUrl: "./views/user/createActivity.html",
+                controller: "createActivityController"
             }).state("userlist", {
                 url: "/userlist",
                 templateUrl: "./views/user/userlist.html",
