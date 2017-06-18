@@ -20,10 +20,10 @@
                 url: "/create",
                 templateUrl: "./views/user/create.html",
                 controller: "userController"
-            }).state("register", {
-                url: "/register",
-                templateUrl: "./views/user/register.html",
-                controller: "userController"
+            }).state("createActivity", {
+                url: "/createActivity",
+                templateUrl: "./views/user/createActivity.html",
+                controller: "activityController"
             }).state("activity", {
                 url: "/activities",
                 templateUrl: "./views/user/activity.html",

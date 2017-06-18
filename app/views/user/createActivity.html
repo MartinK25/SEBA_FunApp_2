@@ -1,0 +1,57 @@
+<-- Register.html -->
+<h2 ng-show="user._id!=null">Edit</h2>
+<h2 ng-hide="user._id!=null">Register</h2>
+<hr>
+<form name="userForm" ng-submit="saveData(activity)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="activity.name" name="name" ng-required="true" class="form-control"/>
+            <p ng-show="userForm.name.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Type</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="activity.type" name="type" ng-required="true" class="form-control"/>
+            <p ng-show="userForm.password.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Activity-Type</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">City</label>
+        <div class="col-md-10">
+            <textarea name="address" ng-model="activity.address" ng-required="true" class="form-control"></textarea>
+            <p ng-show="userForm.address.$error.required && (userForm.$submitted || userForm.address.$dirty)" class="text-danger">Please Enter City</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Location</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="activity.location" name="location" ng-required="false" class="form-control"/>
+            <p ng-show="userForm.contactNo.$error.required && (userForm.$submitted || userForm.contactNo.$dirty)" class="text-danger">Please Enter Location</p>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Date</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="activity.date" name="date" ng-required="false" class="form-control"/>
+            <p ng-show="userForm.contactNo.$error.required && (userForm.$submitted || userForm.contactNo.$dirty)" class="text-danger">Please Enter Date</p>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Time</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="activity.time" name="location" ng-required="false" class="form-control"/>
+            <p ng-show="userForm.contactNo.$error.required && (userForm.$submitted || userForm.contactNo.$dirty)" class="text-danger">Please Enter Time</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="user._id!=null"/>
+            <input type="submit" value="Save" ng-click="saveData(user)" class="btn btn-primary" ng-hide="user._id!=null"/>
+            <a ui-sref="users" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

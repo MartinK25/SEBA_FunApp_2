@@ -10,7 +10,9 @@ var activitySchema = new Schema({
     name: { type: String, required: true },
     type: { type: String, required: true },
     city: { type: String, required: true },
-    address: { type: String, required: true }
+    location: { type: String, required: false },
+    date: { type: String, required: false },
+    time: { type: String, required: false }
 }, {
     versionKey: false
 });
