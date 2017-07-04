@@ -1,0 +1,59 @@
+
+
+testing
+{{$ctrl.activity}}
+
+test
+
+<div layout="column" layout-padding>
+    <md-content class="md-no-momentum">
+        <h1> {{$ctrl.activity.title}} </h1>
+        <br/>
+        <form name="activityForm">
+            <md-input-container class="md-icon-float md-block">
+                <label>Name</label>
+                <md-icon><ng-md-icon icon="name" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.name" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Type</label>
+                <md-icon><ng-md-icon icon="type" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.type" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>City</label>
+                <md-icon><ng-md-icon icon="city" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.city" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Location</label>
+                <md-icon><ng-md-icon icon="location" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.location" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Date</label>
+                <md-icon><ng-md-icon icon="date" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.date" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Time</label>
+                <md-icon><ng-md-icon icon="time" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.activity.time" type="text">
+            </md-input-container>
+            <!--
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea ng-model="$ctrl.activity.description" md-maxlength="1000" rows="8" md-select-on-focus></textarea>
+            </md-input-container>
+            -->
+            <div layout="row">
+                <span flex></span>
+                <md-button class="md-raised md-primary" type="submit" ng-click="$ctrl.save()">Save</md-button>
+                <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+            </div>
+
+        </form>
+    </md-content>
+
+</div>
+

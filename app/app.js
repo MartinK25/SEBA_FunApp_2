@@ -20,13 +20,13 @@
                 url: "/create",
                 templateUrl: "./views/user/create.html",
                 controller: "userController"
-            }).state("createActivity", {
-                url: "/createActivity",
-                templateUrl: "./views/user/createActivity.html",
-                controller: "activityController"
             }).state("activities", {
                 url: "/activities",
                 templateUrl: "./views/user/activity.html",
+                controller: "activityController"
+            }).state("createActivity", {
+                url: "/createActivity",
+                templateUrl: "./views/user/createActivity.html",
                 controller: "activityController"
             }).state("editActivity", {
                 url: "/edit/:id",
@@ -36,6 +36,10 @@
                 url: "/userlist",
                 templateUrl: "./views/user/userlist.html",
                 controller: "userlistController"
+            }).state("activitylist", {
+                url: "/activitylist",
+                templateUrl: "./views/user/activitylist.html",
+                controller: "activitylistController"
             }).state("login", {
                 url: "/login",
                 templateUrl: "./views/login/login.view.html",

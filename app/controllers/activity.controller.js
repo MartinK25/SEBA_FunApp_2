@@ -12,9 +12,14 @@
 
     function Controller($scope, $rootScope, activityService, $state, $stateParams) {
         $scope.activities = [];
+        activityService.getActivities().then(function(res) {
+            $scope.activities = res.data;
+        }).catch(function(err) {
+            console.log(err);
+        });
 
-        if ($state.current.name == "activities") {
-            $rootScope.Title = "activity Listing";
+        if ($state.current.name == "activitieschange") {
+            $rootScope.Title = "Overview of activities";
             activityService.getActivities().then(function(res) {
                 $scope.activities = res.data;
             }).catch(function(err) {
@@ -52,12 +57,12 @@
                     });
                 }
             };
-        } else if ($state.current.name == "create") {
+        } else if ($state.current.name == "activities") {
             $rootScope.Title = "Create activity";
             $scope.saveData = function(activity) {
                 $scope.IsSubmit = true;
                 if ($scope.activityForm.$valid) {
-                    activityService.createActivity(activity).then(function(res) {
+                    activityService.createActity(activity).then(function(res) {
                         if (res.data == "created") {
                             $state.go("activities");
                         }
