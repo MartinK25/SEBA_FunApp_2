@@ -16,12 +16,13 @@ import Routes from './config/routes';
 import Middlewares from './config/middlewares';
 
 import AppContent from './components/app-content/app-content';
-import ViewMovies from './components/view-movies/view-movies';
+/*import ViewMovies from './components/view-movies/view-movies'; */
 import ViewMovie from './components/view-movie/view-movie';
 import ViewMovieEdit from './components/view-movie-edit/view-movie-edit';
 /*import ViewMovieCreate from './components/view-movie-create/view-movie-create';*/
 import ViewLogin from './components/view-login/view-login';
 import ViewActivityCreate from './components/view-activity-create/view-activity-create';
+import ViewActivities from './components/view-activities/view-activities';
 
 let app = angular.module('app', [
     uiRouter,
@@ -31,12 +32,13 @@ let app = angular.module('app', [
     MoviesService.name,
     ActivityService.name,
     AppContent.name,
-    ViewMovies.name,
+    /*ViewMovies.name,*/
     ViewMovie.name,
     ViewMovieEdit.name,
    /* ViewMovieCreate.name,*/
     ViewLogin.name,
-    ViewActivityCreate.name
+    ViewActivityCreate.name,
+    ViewActivities.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');
