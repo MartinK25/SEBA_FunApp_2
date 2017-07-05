@@ -86,7 +86,7 @@ export default function config ($stateProvider, $urlRouterProvider){
         })
 
         .state('activity', {
-            url: '/activity',
+            url: '/activity/:activityId',
             component: ActivityComponent.name,
             resolve: {
                 activity : resolveActivity

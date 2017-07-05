@@ -6,7 +6,7 @@ test
     <md-card flex="33" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
         <md-card-title>
             <md-card-title-text>
-                <span ng-click="$ctrl.details(activity)" onclick="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
+                <span ng-click="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
                 <span class="md-subhead">{{activity.type}} in {{activity.city}}</span>
             </md-card-title-text>
         </md-card-title>
@@ -34,3 +34,28 @@ test
 <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
     <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
 </md-button>
+
+<h2>Users Listing</h2>
+<table class="table" ng-if="$ctrl.activities.length>0">
+    <tr>
+        <th>SNo.</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Contact No.</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="activity in $ctrl.activities">
+        <td>{{activity._id}}</td>
+        <td>{{activity.name}}</td>
+        <td>{{activity.contactNo}}</td>
+        <td>{{activity.address}}</td>
+        <td>
+            <!--<a ui-sref="edit({id:activity._id})">Edit</a> |-->$ctrl.details(activity)
+            <a href="#" ng-click=$ctrl.details(activity)>Edit</a>
+            <a href="#" ng-click="deleteUser(activity._id)">Delete</a>
+        </td>
+    </tr>
+</table>
+<div ng-if="activitys.length==0">
+    No record found !!
+</div>

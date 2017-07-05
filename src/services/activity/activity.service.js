@@ -14,7 +14,7 @@ export default class ActivityService {
     }
 
     static get name(){
-        return 'activityService';
+        return 'Service';
     }
 
     list() {
@@ -43,9 +43,9 @@ export default class ActivityService {
     }
 
 
-    create(activity) {
+    create(movie) {
         let url = this.resourceUrl;
-        return this.$http.post(url,activity).then(responce => {
+        return this.$http.post(url,movie).then(responce => {
 
             return new Promise((resolve, reject) => {
                 resolve(responce.data);
@@ -65,10 +65,10 @@ export default class ActivityService {
         })
     }
 
-    update(activity) {
+    update(movie) {
 
-        let url = `${ this.resourceUrl }${ activity['_id'] }`;
-        return this.$http.put(url,activity).then(responce => {
+        let url = `${ this.resourceUrl }${ movie['_id'] }`;
+        return this.$http.put(url,movie).then(responce => {
 
             return new Promise((resolve, reject) => {
                 resolve(responce.data);
