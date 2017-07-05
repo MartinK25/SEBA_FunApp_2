@@ -31,7 +31,7 @@ class ViewActivityCreateComponentController{
     }
 
     cancel() {
-        this.$state.go('activity',{});
+        this.$state.go('activities',{});
     };
 
     save() {
@@ -40,7 +40,7 @@ class ViewActivityCreateComponentController{
         this.activity['user'] = user['_id'];
         this.ActivityService.create(this.activity).then(data => {
             let _id = data['_id'];
-            this.$state.go('activity',{ activityId:_id});
+            this.$state.go('activities',{ activityId:_id});
         });
 
     };
