@@ -6,15 +6,14 @@ test
     <md-card flex="33" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">{{activity.name}}</span>
+                <span ng-click="$ctrl.details(activity)" onclick="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
                 <span class="md-subhead">{{activity.type}} in {{activity.city}}</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content layout="row" layout-align="space-between">
             <div class="md-media-xl card-media"></div>
             <p>
-                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                The titles of Washed Out's breakthrough
             </p>
             <md-card-actions layout="column">
                 <md-button class="md-icon-button" aria-label="Join Activity">
@@ -24,7 +23,7 @@ test
                     <md-icon md-svg-src='./../../img/icons/Join.svg'></md-icon>
                 </md-button>
                 <md-button class="md-icon-button" aria-label="Share">
-                    <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+                    <md-icon md-svg-icon="list"></md-icon>
                 </md-button>
             </md-card-actions>
         </md-card-content>

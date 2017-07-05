@@ -40,8 +40,9 @@ class ViewActivitiesComponentController{
 };
 
     details (activity) {
-        let _id = activity['_id'];
-        this.$state.go('activity',{ activityId:_id});
+        /*let _id = activity['_id'];*/
+        let activityId = activity['_id'];
+        this.$state.go('activity',{ activityId});
     };
 
 

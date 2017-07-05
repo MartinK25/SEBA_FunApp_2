@@ -8,6 +8,7 @@ import LoginComponent from './../components/view-login/view-login.component';
 
 import ActivityCreateComponent from './../components/view-activity-create/view-activity-create.component';
 import ActivitiesComponent from './../components/view-activities/view-activities.component';
+import ActivityComponent from './../components/view-activity/view-activity.component';
 
 import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';
@@ -24,9 +25,9 @@ function resolveMovies(moviesService){
 }*/
 
 /* think not working:*/
-resolveActivity.$inject = [ActivityService.name];
-function resolveActivity(activityService){
-    return activityService.list();
+resolveActivity.$inject = ['$stateParams', ActivityService.name];
+function resolveActivity($stateParams,activityService){
+    return activityService.get($stateParams.activityId);
 }
 
 resolveActivities.$inject = [ActivityService.name];
@@ -84,6 +85,13 @@ export default function config ($stateProvider, $urlRouterProvider){
             component: ActivityCreateComponent.name,
         })
 
+        .state('activity', {
+            url: '/activity',
+            component: ActivityComponent.name,
+            resolve: {
+                activity : resolveActivity
+            }
+        })
 
 
 }
