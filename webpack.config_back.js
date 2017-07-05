@@ -35,13 +35,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-            },
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                    loader: 'file-loader',
-                    options: {
-                        name: '/images/[name]_[hash:7].[ext]',
-                    }
             }
         ]
     },

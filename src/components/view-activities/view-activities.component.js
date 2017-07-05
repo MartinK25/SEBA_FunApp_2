@@ -29,12 +29,21 @@ class ViewActivitiesComponentController{
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
 
+        this.loadImage = function(image) {
+            return require('../../img/icons/' + image);
+        };
+
     }
+
+    loadImage (image) {
+    return require('../../img/icons/' + image);
+};
 
     details (activity) {
         let _id = activity['_id'];
         this.$state.go('activity',{ activityId:_id});
     };
+
 
     edit (activity) {
 
