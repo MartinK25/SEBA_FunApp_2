@@ -46,8 +46,8 @@ class AppHeaderComponentController{
         this.$state.go('movies',{});
     }
 
-    goAddActivity(){
-        this.$state.go('addActivity',{});
+    goCreateActivity(){
+        this.$state.go('createActivity',{});
     }
 
     login(){

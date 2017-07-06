@@ -16,15 +16,16 @@ import Routes from './config/routes';
 import Middlewares from './config/middlewares';
 
 import AppContent from './components/app-content/app-content';
-/*import ViewMovies from './components/view-movies/view-movies'; */
+/*import ViewMovies from './components/view-movies/view-movies';
 import ViewMovie from './components/view-movie/view-movie';
 import ViewMovieEdit from './components/view-movie-edit/view-movie-edit';
-/*import ViewMovieCreate from './components/view-movie-create/view-movie-create';*/
+import ViewMovieCreate from './components/view-movie-create/view-movie-create';*/
 import ViewLogin from './components/view-login/view-login';
 import ViewActivityCreate from './components/view-activity-create/view-activity-create';
 import ViewActivities from './components/view-activities/view-activities';
 import ViewActivity from './components/view-activity/view-activity';
 import ViewActivityEdit from './components/view-activity-edit/view-activity-edit';
+import ViewActivityJoin from './components/view-activity-join/view-activity-join';
 
 let app = angular.module('app', [
     uiRouter,
@@ -35,14 +36,15 @@ let app = angular.module('app', [
     ActivityService.name,
     AppContent.name,
     /*ViewMovies.name,*/
-    ViewMovie.name,
+    /*ViewMovie.name,
     ViewMovieEdit.name,
-   /* ViewMovieCreate.name,*/
+    ViewMovieCreate.name,*/
     ViewLogin.name,
     ViewActivityCreate.name,
     ViewActivities.name,
     ViewActivity.name,
-    ViewActivityEdit.name
+    ViewActivityEdit.name,
+    ViewActivityJoin.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

@@ -1,15 +1,14 @@
 
 'use strict';
 
-import template from './view-activity.template.html';
+import template from './view-activity-join.template.html';
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
+import ParticipantsService from './../../services/participants/participants.service';
 
-
-
-class ViewActivityComponent {
+class ViewActivityJoinComponent {
     constructor(){
-        this.controller = ViewActivityComponentController;
+        this.controller = ViewActivityJoinComponentController;
         this.template = template;
         this.bindings = {
             activity: '<',
@@ -18,21 +17,19 @@ class ViewActivityComponent {
     }
 
     static get name() {
-        return 'viewActivity';
+        return 'joinActivity'; /*what does that do?*/
     }
 
 
 }
 
-
-class ViewActivityComponentController{
+class ViewActivityJoinComponentController{
     constructor($state,ActivityService,UserService){
         this.$state = $state;
         this.ActivityService = ActivityService;
         this.UserService = UserService;
 
     }
-
 
     edit () {
 
@@ -43,6 +40,21 @@ class ViewActivityComponentController{
             this.$state.go('login',{});
         }
 
+    };
+
+    join () {
+        /*if (this.UserService.isAuthenticated()) {
+            let _id = this.activity['_id'];
+            ...
+        } else {
+            this.$state.go('login',{});
+        }
+        this.Activity
+*/
+    } /*todo!*/
+
+    cancel () {
+        this.$state.go('activities',{});
     };
 
 
@@ -82,4 +94,4 @@ class ViewActivityComponentController{
 }
 
 
-export default ViewActivityComponent;
+export default ViewActivityJoinComponent;

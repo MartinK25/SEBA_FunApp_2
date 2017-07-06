@@ -6,6 +6,8 @@
 import template from './view-activities.template.html';
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
+import './view-activities.style.css';
+
 
 class ViewActivitiesComponent {
     constructor(){
@@ -35,6 +37,12 @@ class ViewActivitiesComponentController{
         /*let _id = activity['_id'];*/
         let _id = activity['_id'];
         this.$state.go('activity',{ activityId: _id});
+    };
+
+    join (activity) {
+        /*let _id = activity['_id'];*/
+        let _id = activity['_id'];
+        this.$state.go('joinActivity',{ activityId: _id});
     };
 
 
