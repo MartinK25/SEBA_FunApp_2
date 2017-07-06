@@ -29,19 +29,20 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: 'html'
-            },
+                loaders: [
+                    "html?" + JSON.stringify({
+                        attrs: ["img:src", "img:ng-src", "md-icon:md-svg-src"]
+                    })
+                ]},
             // Extract css files
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
             },
+            // Extract svg files
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                    loader: 'file-loader',
-                    options: {
-                        name: '/images/[name]_[hash:7].[ext]',
-                    }
+                loader: "file-loader?name=./images/[name].[ext]"
             }
         ]
     },

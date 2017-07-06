@@ -17,6 +17,7 @@
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
+    "bootstrap": "^3.3.7",
     "css-loader": "^0.23.1",
     "extract-loader": "^0.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -40,7 +41,8 @@
     "body-parser": "^1.17.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
-    "mongoose": "^4.11.1"
+    "mongoose": "^4.11.1",
+    "passport": "^0.3.2"
   },
   "engines": {
     "node": ">=4.3"
@@ -50,6 +52,6 @@
     "build": "webpack --config webpack.config.js",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./dist",
-	"webpack-dev": "webpack-dev-server --content-base build/"
+    "webpack-dev": "webpack-dev-server --content-base build/"
   }
 }

@@ -24,6 +24,7 @@ import ViewLogin from './components/view-login/view-login';
 import ViewActivityCreate from './components/view-activity-create/view-activity-create';
 import ViewActivities from './components/view-activities/view-activities';
 import ViewActivity from './components/view-activity/view-activity';
+import ViewActivityEdit from './components/view-activity-edit/view-activity-edit';
 
 let app = angular.module('app', [
     uiRouter,
@@ -40,7 +41,8 @@ let app = angular.module('app', [
     ViewLogin.name,
     ViewActivityCreate.name,
     ViewActivities.name,
-    ViewActivity.name
+    ViewActivity.name,
+    ViewActivityEdit.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

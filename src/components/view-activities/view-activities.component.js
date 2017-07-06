@@ -29,15 +29,7 @@ class ViewActivitiesComponentController{
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
 
-        this.loadImage = function(image) {
-            return require('../../img/icons/' + image);
-        };
-
     }
-
-    loadImage (image) {
-    return require('../../img/icons/' + image);
-};
 
     details (activity) {
         /*let _id = activity['_id'];*/
@@ -48,12 +40,12 @@ class ViewActivitiesComponentController{
 
     edit (activity) {
 
-        if (this.UserService.isAuthenticated()) {
+       /* if (this.UserService.isAuthenticated()) { */
             let _id = activity['_id'];
-            this.$state.go('activityEdit',{ activityId:_id});
-        } else {
+            this.$state.go('editActivity',{ activityId:_id}); /*
+        } else { */    /*remove need to login
             this.$state.go('login',{});
-        }
+        } */
     };
 
     newActivity(){

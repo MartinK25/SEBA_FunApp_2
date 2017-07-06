@@ -1,15 +1,15 @@
 /**
- * Created by martin on 17.06.2017.
+ * Created by martin on 06.07.2017.
  */
 var express = require("express"),
     router = express.Router(),
-    activity = require("../models/activity.js"),
+    participant = require("../models/participants.js"),
     cors = require("cors");
 
 router.use(cors())
 
 router.get("/", function(req, res) {
-    activity.find({}, function(err, data) {
+    participant.find({}, function(err, data) {
         if (err) {
             res.send("error");
             return;
@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
     });
 }).get("/:id", function(req, res) {
     var id = req.params.id;
-    activity.find({ _id: id }, function(err, data) {
+    participant.find({ _id: id }, function(err, data) {
         if (err) {
             res.send("error");
             return;
@@ -27,7 +27,7 @@ router.get("/", function(req, res) {
     });
 }).post("/", function(req, res) {
     var obj = req.body;
-    var model = new activity(obj);
+    var model = new participant(obj);
     model.save(function(err) {
         if (err) {
             res.send("error");
@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
     var id = req.params.id;
     var obj = req.body;
 
-    activity.findByIdAndUpdate(id, { name: obj.name, type: obj.type, city: obj.city, location: obj.location, date: obj.date, time: obj.time },
+    participant.findByIdAndUpdate(id, { activity: obj.activity },
         function(err) {
             if (err) {
                 res.send("error");
@@ -49,7 +49,7 @@ router.get("/", function(req, res) {
         });
 }).delete("/:id", function(req, res) {
     var id = req.params.id;
-    activity.findByIdAndRemove(id, function(err) {
+    participant.findByIdAndRemove(id, function(err) {
         if (err) {
             res.send("error");
             return;

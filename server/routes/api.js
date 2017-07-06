@@ -8,6 +8,8 @@ var express = require('express'),
 router.use("/user", require("../controllers/user.api"));
 //routes for activity api
 router.use("/activity", require("../controllers/activity.api"));
+//routes for participants api
+router.use("/participants", require("../controllers/participants.api"));
 
 
 //add here other api routes

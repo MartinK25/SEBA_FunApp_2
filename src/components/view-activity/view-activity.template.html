@@ -17,7 +17,17 @@
             </md-card-actions>
 
             <span class="md-headline">{{$ctrl.activity.name}}</span>
-            <span class="md-subhead">{{$ctrl.activity.city}}</span>
+            <span class="md-subhead">City: {{$ctrl.activity.city}}</span>
+            <span class="md-subhead">Type: {{$ctrl.activity.type}}</span>
+            <md-card-content>
+                <md-card>
+                <span class="md-content">Location: {{$ctrl.activity.location}}</span>
+                </md-card><md-card>
+                <span class="md-content">Date: {{$ctrl.activity.date}}</span>
+            </md-card><md-card>
+                <span class="md-content">Time: {{$ctrl.activity.time}}</span>
+            </md-card>
+            </md-card-content>
 
         </md-card-title-text>
 

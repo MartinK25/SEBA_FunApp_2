@@ -9,6 +9,7 @@ import LoginComponent from './../components/view-login/view-login.component';
 import ActivityCreateComponent from './../components/view-activity-create/view-activity-create.component';
 import ActivitiesComponent from './../components/view-activities/view-activities.component';
 import ActivityComponent from './../components/view-activity/view-activity.component';
+import ActivityEditComponent from './../components/view-activity-edit/view-activity-edit.component';
 
 import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';
@@ -88,6 +89,14 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('activity', {
             url: '/activity/:activityId',
             component: ActivityComponent.name,
+            resolve: {
+                activity : resolveActivity
+            }
+        })
+
+        .state('editActivity', {
+            url: '/editActivity/:activityId',
+            component: ActivityEditComponent.name,
             resolve: {
                 activity : resolveActivity
             }

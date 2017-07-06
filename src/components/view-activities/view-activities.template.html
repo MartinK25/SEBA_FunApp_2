@@ -1,9 +1,7 @@
-test
-<img ng-src="$ctrl.loadImage('join.png')" />
-{{activities}}
+
 <div class='md-padding' layout="row" layout-wrap>
 <!--<md-content ng-repeat="activity in $ctrl.activities" layout="row"> -->
-    <md-card flex="33" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+    <md-card flex="30" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
         <md-card-title>
             <md-card-title-text>
                 <span ng-click="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
@@ -13,17 +11,17 @@ test
         <md-card-content layout="row" layout-align="space-between">
             <div class="md-media-xl card-media"></div>
             <p>
-                The titles of Washed Out's breakthrough
+                [Picture]
             </p>
             <md-card-actions layout="column">
                 <md-button class="md-icon-button" aria-label="Join Activity">
-                    <md-icon md-svg-src='../../img/icons/join.png'></md-icon>
+                    <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
                 </md-button>
-                <md-button class="md-icon-button" aria-label="Settings">
-                    <md-icon md-svg-src='./../../img/icons/Join.svg'></md-icon>
+                <md-button class="md-icon-button" aria-label="Details" ng-click="$ctrl.details(activity)">
+                    <md-icon md-svg-src="./../../img/icons/Details.svg"></md-icon>
                 </md-button>
-                <md-button class="md-icon-button" aria-label="Share">
-                    <md-icon md-svg-icon="list"></md-icon>
+                <md-button class="md-icon-button" aria-label="Edit" ng-click="$ctrl.edit(activity)">
+                    <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
                 </md-button>
             </md-card-actions>
         </md-card-content>
@@ -34,28 +32,3 @@ test
 <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
     <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
 </md-button>
-
-<h2>Users Listing</h2>
-<table class="table" ng-if="$ctrl.activities.length>0">
-    <tr>
-        <th>SNo.</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Contact No.</th>
-        <th>Actions</th>
-    </tr>
-    <tr ng-repeat="activity in $ctrl.activities">
-        <td>{{activity._id}}</td>
-        <td>{{activity.name}}</td>
-        <td>{{activity.contactNo}}</td>
-        <td>{{activity.address}}</td>
-        <td>
-            <!--<a ui-sref="edit({id:activity._id})">Edit</a> |-->$ctrl.details(activity)
-            <a href="#" ng-click=$ctrl.details(activity)>Edit</a>
-            <a href="#" ng-click="deleteUser(activity._id)">Delete</a>
-        </td>
-    </tr>
-</table>
-<div ng-if="activitys.length==0">
-    No record found !!
-</div>
