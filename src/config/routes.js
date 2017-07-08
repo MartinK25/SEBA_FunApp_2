@@ -1,9 +1,5 @@
 'use strict';
 
-/*import MoviesComponent from './../components/view-movies/view-movies.component';
-import MovieComponent from './../components/view-movie/view-movie.component';
-import MovieEditComponent from './../components/view-movie-edit/view-movie-edit.component';
-import MovieCreateComponent from './../components/view-movie-create/view-movie-create.component';*/
 import LoginComponent from './../components/view-login/view-login.component';
 
 import ActivityCreateComponent from './../components/view-activity-create/view-activity-create.component';
@@ -11,6 +7,7 @@ import ActivitiesComponent from './../components/view-activities/view-activities
 import ActivityComponent from './../components/view-activity/view-activity.component';
 import ActivityEditComponent from './../components/view-activity-edit/view-activity-edit.component';
 import ActivityJoinComponent from './../components/view-activity-join/view-activity-join.component';
+/*import ActivitiesSearchComponent from './../components/view-activities-search/view-activities-search.component';*/
 
 import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';
@@ -58,25 +55,7 @@ export default function config ($stateProvider, $urlRouterProvider){
                 activities : resolveActivities
             }
         })
-     /*   .state('movieAdd', {
-            url: '/movies/new',
-            component: MovieCreateComponent.name
-        })
-        .state('movie', {
-            url: '/movies/:movieId',
-            component: MovieComponent.name,
-            resolve: {
-                movie : resolveMovie
-            }
 
-        })
-        .state('movieEdit', {
-            url: '/movies/:movieId/edit',
-            component: MovieEditComponent.name,
-            resolve: {
-                movie : resolveMovie
-            }
-        })*/
         .state('login', {
             url: '/login',
             component: LoginComponent.name,
@@ -110,7 +89,15 @@ export default function config ($stateProvider, $urlRouterProvider){
                 activity : resolveActivity
             }
         })
-
+/*
+        .state('searchActivities', {
+            url: '/searchActivity/',
+            component: ActivitiesSearchComponent.name,
+            resolve: {
+                activities : resolveActivities
+            }
+        })
+*/
 
 }
 

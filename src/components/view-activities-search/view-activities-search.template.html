@@ -1,0 +1,34 @@
+
+<div class='md-padding' layout="row" layout-wrap>
+    <!--<md-content ng-repeat="activity in $ctrl.activities" layout="row"> -->
+    <md-card flex="30" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'dark' }}" md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span ng-click="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
+                <span class="md-subhead">{{activity.type}} in {{activity.city}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+            <div class="md-media-xl card-media"></div>
+            <p>
+                [Picture]
+            </p>
+            <md-card-actions layout="column">
+                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
+                    <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Details" ng-click="$ctrl.details(activity)">
+                    <md-icon md-svg-src="./../../img/icons/Details.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Edit" ng-click="$ctrl.edit(activity)">
+                    <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card-content>
+    </md-card>
+    <!-- </md-content> -->
+</div>
+
+<md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
+    <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
+</md-button>
