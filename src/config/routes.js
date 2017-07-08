@@ -7,6 +7,7 @@ import ActivitiesComponent from './../components/view-activities/view-activities
 import ActivityComponent from './../components/view-activity/view-activity.component';
 import ActivityEditComponent from './../components/view-activity-edit/view-activity-edit.component';
 import ActivityJoinComponent from './../components/view-activity-join/view-activity-join.component';
+import RegisterComponent from './../components/view-register/view-register.component';
 /*import ActivitiesSearchComponent from './../components/view-activities-search/view-activities-search.component';*/
 
 import MoviesService from './../services/movies/movies.service';
@@ -59,6 +60,11 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('login', {
             url: '/login',
             component: LoginComponent.name,
+        })
+
+        .state('register', {
+            url: '/register',
+            component: RegisterComponent.name,
         })
 
         .state('createActivity', {

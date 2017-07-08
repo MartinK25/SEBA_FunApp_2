@@ -24,9 +24,19 @@ app.use(express.static(path.join(__dirname, 'app')));
 // setting static files location './node_modules' for libs like angular, bootstrap
 app.use(express.static('node_modules'));
 
+
 // configure our routes
 app.use('/', routes);
 app.use('/api', apiRoutes);
+//passport
+var passport = require('passport');
+var jwtConfig = require('./server/passport/jwtConfig');
+app.use(passport.initialize());
+jwtConfig(passport);
+var usersRoutes = require("./server/routes/usersRoutes");
+app.use('/api/users', usersRoutes(passport));
+
+
 
 // setting port number for running server
 var port = process.env.port || 3000;
