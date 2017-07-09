@@ -15,7 +15,8 @@ class ViewActivitiesSearchComponent {
         this.template = template;
         this.bindings = {
             activities: '<',
-        }
+        };
+
     }
 
     static get name() {
@@ -30,6 +31,11 @@ class ViewActivitiesSearchComponentController{
         this.$state = $state;
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
+        $scope.gridOptions = {
+            data: [],
+            urlSync: false
+        };
+        $scope.gridOptions.data = activities;
 
     }
 

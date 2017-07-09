@@ -8,6 +8,8 @@ import 'angular-material/angular-material.css';
 
 import ngMdIcons from 'angular-material-icons';
 
+import smart_table from 'angular-smart-table';
+
 import MoviesService from './services/movies/movies';
 import UserService from './services/user/user';
 import ActivityService from './services/activity/activity';
@@ -27,12 +29,13 @@ import ViewActivity from './components/view-activity/view-activity';
 import ViewActivityEdit from './components/view-activity-edit/view-activity-edit';
 import ViewActivityJoin from './components/view-activity-join/view-activity-join';
 import ViewRegister from './components/view-register/view-register';
-/*import ViewActivitiesSearch from './components/view-activities-search/view-activities-search';*/
+import ViewActivitiesSearch from './components/view-activities-search/view-activities-search';
 
 let app = angular.module('app', [
     uiRouter,
     angularMaterial,
     ngMdIcons,
+    smart_table,
     UserService.name,
     MoviesService.name,
     ActivityService.name,
@@ -47,8 +50,8 @@ let app = angular.module('app', [
     ViewActivity.name,
     ViewActivityEdit.name,
     ViewActivityJoin.name,
-    ViewRegister.name/*,
-    ViewActivitiesSearch.name*/
+    ViewRegister.name,
+    ViewActivitiesSearch.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

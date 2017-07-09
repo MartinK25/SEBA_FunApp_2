@@ -8,7 +8,7 @@ import ActivityComponent from './../components/view-activity/view-activity.compo
 import ActivityEditComponent from './../components/view-activity-edit/view-activity-edit.component';
 import ActivityJoinComponent from './../components/view-activity-join/view-activity-join.component';
 import RegisterComponent from './../components/view-register/view-register.component';
-/*import ActivitiesSearchComponent from './../components/view-activities-search/view-activities-search.component';*/
+import ActivitiesSearchComponent from './../components/view-activities-search/view-activities-search.component';
 
 import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';
@@ -95,7 +95,7 @@ export default function config ($stateProvider, $urlRouterProvider){
                 activity : resolveActivity
             }
         })
-/*
+
         .state('searchActivities', {
             url: '/searchActivity/',
             component: ActivitiesSearchComponent.name,
@@ -103,7 +103,7 @@ export default function config ($stateProvider, $urlRouterProvider){
                 activities : resolveActivities
             }
         })
-*/
+
 
 }
 

@@ -50,6 +50,10 @@ class AppHeaderComponentController{
         this.$state.go('createActivity',{});
     }
 
+    goSearchActivities(){
+        this.$state.go('searchActivities',{});
+    }
+
     login(){
         this.$state.go('login',{});
     }

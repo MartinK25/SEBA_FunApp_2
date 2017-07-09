@@ -1,10 +1,3 @@
-
-
-testing
-{{$ctrl.activity}}
-
-test
-
 <div layout="column" layout-padding>
     <md-content class="md-no-momentum">
         <h1> {{$ctrl.activity.title}} </h1>
@@ -27,18 +20,15 @@ test
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Location</label>
-                <md-icon><ng-md-icon icon="schedule"></ng-md-icon></md-icon>
+                <md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.location" type="text">
             </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <label>Date</label>
-                <md-icon><ng-md-icon icon="date" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.activity.date" type="text">
-                <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
-            </md-input-container>
+
+            <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+
             <md-input-container class="md-icon-float md-block">
                 <label>Time</label>
-                <md-icon><ng-md-icon icon="time" ></ng-md-icon></md-icon>
+                <md-icon><ng-md-icon icon="schedule" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.time" type="text">
             </md-input-container>
             <!--

@@ -40,20 +40,24 @@ class ViewActivitiesComponentController{
     };
 
     join (activity) {
-        /*let _id = activity['_id'];*/
-        let _id = activity['_id'];
-        this.$state.go('joinActivity',{ activityId: _id});
+
+        if (this.UserService.isAuthenticated()) {
+            let _id = activity['_id'];
+            this.$state.go('joinActivity',{ activityId:_id});
+        } else {
+            this.$state.go('login',{});
+        }
     };
 
 
     edit (activity) {
 
-       /* if (this.UserService.isAuthenticated()) { */
+        if (this.UserService.isAuthenticated()) {
             let _id = activity['_id'];
-            this.$state.go('editActivity',{ activityId:_id}); /*
-        } else { */    /*remove need to login
+            this.$state.go('editActivity',{ activityId:_id});
+        } else {
             this.$state.go('login',{});
-        } */
+        }
     };
 
     newActivity(){
@@ -64,6 +68,10 @@ class ViewActivitiesComponentController{
             this.$state.go('login',{});
         }
 
+    };
+
+    isAuthenticated(){
+        return this.UserService.isAuthenticated();
     }
 
 
