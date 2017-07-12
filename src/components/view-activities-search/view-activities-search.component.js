@@ -8,7 +8,6 @@ import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
 
 
-
 class ViewActivitiesSearchComponent {
     constructor(){
         this.controller = ViewActivitiesSearchComponentController;
@@ -31,11 +30,6 @@ class ViewActivitiesSearchComponentController{
         this.$state = $state;
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
-        $scope.gridOptions = {
-            data: [],
-            urlSync: false
-        };
-        $scope.gridOptions.data = activities;
 
     }
 

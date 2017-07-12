@@ -5,6 +5,9 @@ import uiRouter from '@uirouter/angularjs';
 
 import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
+import angularAnimate from 'angular-animate';
+
+import './ui-bootstrap-tpls-2.5.0.js';
 
 import ngMdIcons from 'angular-material-icons';
 
@@ -34,8 +37,10 @@ import ViewActivitiesSearch from './components/view-activities-search/view-activ
 let app = angular.module('app', [
     uiRouter,
     angularMaterial,
+    angularAnimate,
     ngMdIcons,
     smart_table,
+    'ui.bootstrap',
     UserService.name,
     MoviesService.name,
     ActivityService.name,
@@ -57,6 +62,7 @@ let app = angular.module('app', [
 app.constant('API_URL', 'http://localhost:3000/api');
 app.config(Routes);
 app.config(Middlewares);
+
 
 
 angular.element(document).ready(function() {

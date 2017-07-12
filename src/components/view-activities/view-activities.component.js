@@ -6,7 +6,8 @@
 import template from './view-activities.template.html';
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
-import './view-activities.style.css';
+/*import './view-activities.style.css';*/
+
 
 
 class ViewActivitiesComponent {

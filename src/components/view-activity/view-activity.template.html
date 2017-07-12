@@ -19,13 +19,13 @@
             <span class="md-headline">{{$ctrl.activity.name}}</span>
             <span class="md-subhead">City: {{$ctrl.activity.city}}</span>
             <span class="md-subhead">Type: {{$ctrl.activity.type}}</span>
-            <span class="md-subhead"> <md-card><span class="md-content">&nbsp;&nbsp;&nbsp;<md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$ctrl.activity.location}}</span></span>
+            <span class="md-subhead"> <md-card><span class="md-content">&nbsp;&nbsp;&nbsp;</ng-md-icon></md-icon>Details:</span></span>
             <md-card-content>
-                <md-card><span class="md-content">&nbsp;&nbsp;&nbsp;<md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$ctrl.activity.location}}</span>
+                <md-card><span class="md-content">&nbsp;&nbsp;&nbsp;&nbsp;<md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$ctrl.activity.location}}</span>
                 </md-card><md-card>
                 <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" disabled></md-datepicker>
             </md-card><md-card>
-                    <span class="md-content">&nbsp;&nbsp;&nbsp;<md-icon><ng-md-icon icon="schedule"></ng-md-icon></md-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$ctrl.activity.time}}</span>
+                    <span class="md-content">&nbsp;&nbsp;&nbsp;&nbsp;<md-icon><ng-md-icon icon="schedule"></ng-md-icon></md-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$ctrl.activity.time}}</span>
             </md-card>
             </md-card-content>
 
@@ -33,10 +33,6 @@
 
     </md-card-title>
 
-    <md-card-content>
-        <p>{{$ctrl.movie.mpaa_rating}}</p>
-        <p>{{$ctrl.movie.synopsis}}</p>
-    </md-card-content>
 
 
 </md-card>

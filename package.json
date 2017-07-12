@@ -41,13 +41,16 @@
     "angular-smart-table": "^2.1.8",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
+    "broccoli-funnel": "^1.2.0",
     "cors": "^2.8.3",
     "express": "^4.15.3",
     "jwt-simple": "^0.5.1",
     "mongoose": "^4.11.1",
     "ng-file-upload": "^12.2.13",
+    "ng-table": "^3.0.1",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1"
+    "passport-jwt": "^2.2.1",
+    "ui-bootstrap": "^0.1.10"
   },
   "engines": {
     "node": ">=4.3"

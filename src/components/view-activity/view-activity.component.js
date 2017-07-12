@@ -34,11 +34,11 @@ class ViewActivityComponentController{
     }
 
 
-    edit () {
+    edit() {
 
         if (this.UserService.isAuthenticated()) {
             let _id = this.activity['_id'];
-            this.$state.go('activityEdit',{ activityId:_id});
+            this.$state.go('editActivity',{ activityId:_id});
         } else {
             this.$state.go('login',{});
         }
