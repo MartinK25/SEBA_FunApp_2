@@ -73,6 +73,12 @@ class ViewActivitiesComponentController{
 
     isAuthenticated(){
         return this.UserService.isAuthenticated();
+    };
+
+    getPictureUrl(activity) {
+        console.log("./../../img/style/{{activity.type}}/test.jpg");
+        return("./../../img/style/sports.jpg");
+
     }
 
 

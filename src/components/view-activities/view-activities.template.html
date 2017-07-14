@@ -11,7 +11,13 @@
         <md-card-content layout="row" layout-align="space-between">
             <div class="md-media-xl card-media"></div>
             <p>
-                [Picture]
+
+                <img ng-src="{{$ctrl.getPictureUrl(activity)}}"/>
+                <!--<img ng-src="'./../../img/style/{{activity.type}}.jpg" />-->
+                <a ng-click="$navigate.go('#/path/' + obj.val1 + '/' + obj.val2)">{{obj.val1}}, {{obj.val2}}</a>
+                <a ngHref="/path/{{activity.type}}">[[</a>
+
+
             </p>
             <md-card-actions layout="column">
                 <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
@@ -32,3 +38,9 @@
 <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
     <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
 </md-button>
+
+
+<img ng-src="./../../img/icons/Details.svg"/>
+<img ng-src="./../../img/style/Sports.jpg" />
+<img ng-src="./../../img/style/bg.jpg" />
+
