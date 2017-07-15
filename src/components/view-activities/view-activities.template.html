@@ -37,9 +37,9 @@
     <section class="thumbnails">
         <div>
             <a href="">
-                <img src="../../img/style/Sports.jpg" alt="" />
+                <img src="../../img/style/Sports.jpg" alt="" ng-click="$ctrl.goType('Sports')" />
                 <h3>Jogging</h3>
-                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
+                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.goType('Sports')">
                     <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
             </a>
             <a href="images/fulls/02.jpg">
@@ -73,10 +73,6 @@
         </div>
     </section>
 </div>
-
-<md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
-    <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
-</md-button>
 
 
 <img ng-src="./../../img/icons/Details.svg"/>

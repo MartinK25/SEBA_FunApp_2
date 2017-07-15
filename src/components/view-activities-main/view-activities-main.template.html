@@ -1,5 +1,5 @@
 <h2>All activities</h2>
-$state.params.type
+{{$ctrl.type}}
 <form>
     <div class="form-group">
         <div class="input-group">
@@ -20,7 +20,7 @@ $state.params.type
         <th>Date</th>
         <th>Time</th>
     </tr>
-    <tr ng-repeat="activity in $ctrl.activities | filter:searchActivity">
+    <tr ng-repeat="activity in $ctrl.activities | filter:$ctrl.getType()">
         <td>{{activity.name}}</td>
         <td>{{activity.type}}</td>
         <td>{{activity.city}}</td>

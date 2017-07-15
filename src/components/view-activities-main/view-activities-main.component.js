@@ -3,34 +3,35 @@
  */
 'use strict';
 
-import template from './view-activities.template.html';
+import template from './view-activities-main.template.html';
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
-import './view-activities.style.css';
 
 
-
-class ViewActivitiesComponent {
+class ViewActivitiesMainComponent {
     constructor(){
-        this.controller = ViewActivitiesComponentController;
+        this.controller = ViewActivitiesMainComponentController;
         this.template = template;
         this.bindings = {
             activities: '<',
-        }
+        };
+
     }
 
     static get name() {
-        return 'viewActivities';
+        return 'mainActivities';
     }
 
 
 }
 
-class ViewActivitiesComponentController{
+class ViewActivitiesMainComponentController{
     constructor($state,ActivityService,UserService){
         this.$state = $state;
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
+        this.type = $state.params.type;
+        console.log($state.params.type);
 
     }
 
@@ -41,24 +42,20 @@ class ViewActivitiesComponentController{
     };
 
     join (activity) {
-
-        if (this.UserService.isAuthenticated()) {
-            let _id = activity['_id'];
-            this.$state.go('joinActivity',{ activityId:_id});
-        } else {
-            this.$state.go('login',{});
-        }
+        /*let _id = activity['_id'];*/
+        let _id = activity['_id'];
+        this.$state.go('joinActivity',{ activityId: _id});
     };
 
 
     edit (activity) {
 
-        if (this.UserService.isAuthenticated()) {
-            let _id = activity['_id'];
-            this.$state.go('editActivity',{ activityId:_id});
-        } else {
-            this.$state.go('login',{});
-        }
+        /* if (this.UserService.isAuthenticated()) { */
+        let _id = activity['_id'];
+        this.$state.go('editActivity',{ activityId:_id}); /*
+         } else { */    /*remove need to login
+         this.$state.go('login',{});
+         } */
     };
 
     newActivity(){
@@ -69,19 +66,7 @@ class ViewActivitiesComponentController{
             this.$state.go('login',{});
         }
 
-    };
-
-    isAuthenticated(){
-        return this.UserService.isAuthenticated();
-    };
-
-    getPictureUrl(activity) {
-        let pic = activity['type'];
-        /*console.log('./../../img/style/' + pic + '.jpg');*/
-        console.log('./images/' + pic + '.jpg');
-        return('./images/' + pic + '.jpg');
-
-    };
+    }
 
 
     delete(activity) {
@@ -98,9 +83,9 @@ class ViewActivitiesComponentController{
         }
     };
 
-    goType (type) {
-        this.$state.go('mainActivities',{type});
-    };
+    getType(){
+        return(this.type);
+    }
 
 
     static get $inject(){
@@ -109,4 +94,4 @@ class ViewActivitiesComponentController{
 
 }
 
-export default ViewActivitiesComponent;
+export default ViewActivitiesMainComponent;
