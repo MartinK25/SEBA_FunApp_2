@@ -1,64 +1,30 @@
+<h2>Select the kind of activity you're interested in</h2>
 
-<div class='md-padding' layout="row" layout-wrap>
-<!--<md-content ng-repeat="activity in $ctrl.activities" layout="row"> -->
-    <md-card flex="30" ng-repeat="activity in $ctrl.activities" md-theme="{{ showDarkTheme ? 'dark-orange' : 'dark' }}" md-theme-watch>
-        <md-card-title>
-            <md-card-title-text>
-                <span ng-click="$ctrl.details(activity)" class="md-headline">{{activity.name}}</span> <!-- on click not working -->
-                <span class="md-subhead">{{activity.type}} in {{activity.city}}</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content layout="row" layout-align="space-between">
-            <div class="thumbnails"></div>
-            <p>
+<view-carousel></view-carousel>
 
-                <img ng-src="{{$ctrl.getPictureUrl(activity)}}"/>
-                <!--<img ng-src="'./../../img/style/{{activity.type}}.jpg" />-->
-                <a ng-click="$navigate.go('#/path/' + obj.val1 + '/' + obj.val2)">{{obj.val1}}, {{obj.val2}}</a>
-                <a ngHref="/path/{{activity.type}}">[[</a>
-
-
-            </p>
-            <md-card-actions layout="column">
-                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
-                    <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Details" ng-click="$ctrl.details(activity)">
-                    <md-icon md-svg-src="./../../img/icons/Details.svg"></md-icon>
-                </md-button>
-                <md-button ng-if="$ctrl.isAuthenticated()" class="md-icon-button" aria-label="Edit" ng-click="$ctrl.edit(activity)">
-                    <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
-                </md-button>
-            </md-card-actions>
-        </md-card-content>
-    </md-card>
-<!-- </md-content> -->
-
-    <section class="thumbnails">
+<section class="thumbnails">
         <div>
             <a href="">
                 <img src="../../img/style/Sports.jpg" alt="" ng-click="$ctrl.goType('Sports')" />
-                <h3>Jogging</h3>
-                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.goType('Sports')">
-                    <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
+                <h3>Running</h3>
             </a>
             <a href="images/fulls/02.jpg">
-                <img src="../../img/style/Sports.jpg" alt="" />
-                <h3>Yoga</h3>
+                <img src="../../img/style/Climbing.jpg" alt="" ng-click="$ctrl.goType('Climbing')"/>
+                <h3>Climbing</h3>
             </a>
         </div>
         <div>
-            <a href="images/fulls/03.jpg">
-                <img src="../../img/style/Sports.jpg" alt="" />
-                <h3>Hiking</h3>
+            <a href="images/fulls/02.jpg">
+                <img src="../../img/style/Climbing.jpg" alt="" ng-click="$ctrl.goType('Climbing')"/>
+                <h3>Climbing</h3>
             </a>
             <a href="images/fulls/04.jpg">
                 <img src="../../img/style/Sports.jpg" alt="" />
-                <h3> </h3>
+                <h3>Yoga </h3>
             </a>
             <a href="images/fulls/05.jpg">
                 <img src="../../img/style/Sports.jpg" alt="" />
-                <h3> </h3>
+                <h3>Hiking </h3>
             </a>
         </div>
         <div>
@@ -74,8 +40,5 @@
     </section>
 </div>
 
-
-<img ng-src="./../../img/icons/Details.svg"/>
-<img ng-src="./../../img/style/Sports.jpg" />
 <img ng-src="./../../img/style/bg.jpg" />
 

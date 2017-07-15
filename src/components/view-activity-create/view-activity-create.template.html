@@ -8,9 +8,18 @@
                 <md-icon><ng-md-icon icon="text_format" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.name" type="text">
             </md-input-container>
-            <md-input-container class="md-icon-float md-block">
+            <md-input-container class="md-icon-float">
                 <label>Type</label>
                 <md-icon><ng-md-icon icon="dashboard" ></ng-md-icon></md-icon>
+                <md-select ng-model="$ctrl.activity.type">
+                    <md-option ng-repeat="type in $ctrl.types" ng-value="type">
+                        {{type}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Type_test</label>
+                <md-icon><ng-md-icon icon="text_format" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.type" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">

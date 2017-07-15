@@ -31,7 +31,6 @@ class ViewActivitiesMainComponentController{
         this.ActivitiesService = ActivityService;
         this.UserService = UserService;
         this.type = $state.params.type;
-        console.log($state.params.type);
 
     }
 
@@ -85,7 +84,11 @@ class ViewActivitiesMainComponentController{
 
     getType(){
         return(this.type);
-    }
+    };
+
+    isAuthenticated(){
+        return this.UserService.isAuthenticated();
+    };
 
 
     static get $inject(){

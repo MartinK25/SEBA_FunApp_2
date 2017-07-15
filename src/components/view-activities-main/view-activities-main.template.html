@@ -1,14 +1,4 @@
-<h2>All activities</h2>
-{{$ctrl.type}}
-<form>
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" class="form-control" placeholder="Search for an activity" ng-model="searchActivity">
-        </div>
-    </div>
-</form>
-
+<h2>Activities - {{$ctrl.getType()}}</h2>
 
 
 <table class="table table-bordered table-striped" ng-if="$ctrl.activities.length>0">
@@ -20,7 +10,7 @@
         <th>Date</th>
         <th>Time</th>
     </tr>
-    <tr ng-repeat="activity in $ctrl.activities | filter:$ctrl.getType()">
+    <tr ng-repeat="activity in $ctrl.activities | filter:{type:$ctrl.getType()}">
         <td>{{activity.name}}</td>
         <td>{{activity.type}}</td>
         <td>{{activity.city}}</td>
@@ -28,8 +18,18 @@
         <td>{{activity.date}}</td>
         <td>{{activity.time}}</td>
         <td>
-            <a ui-sref="edit({id:activity._id})">Edit</a> |
-            <a href="#" ng-click="deleteUser(activity._id)">Delete</a>
+            <!--<md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
+                <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
+            </md-button>-->
+            <md-button class="md-icon-button" aria-label="Details" ng-click="$ctrl.details(activity)">
+                <md-icon md-svg-src="./../../img/icons/Details.svg"></md-icon>
+            </md-button>
+            <md-button ng-if="$ctrl.isAuthenticated()" class="md-icon-button" aria-label="Edit" ng-click="$ctrl.edit(activity)">
+                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+            </md-button>
+            <md-button ng-if="$ctrl.isAuthenticated()" class="md-icon-button" aria-label="Edit" ng-click="$ctrl.delete(activity)">
+                <md-icon><ng-md-icon icon="delete"></ng-md-icon></md-icon>
+            </md-button>
         </td>
     </tr>
 </table>

@@ -28,6 +28,7 @@ class ViewActivityCreateComponentController{
         this.$state = $state;
         this.ActivityService = ActivityService;
         this.UserService = UserService;
+        this.types = ['Sports','Music','Dancing','Spiritual'];
     }
 
     cancel() {

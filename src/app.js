@@ -34,6 +34,7 @@ import ViewActivityJoin from './components/view-activity-join/view-activity-join
 import ViewRegister from './components/view-register/view-register';
 import ViewActivitiesSearch from './components/view-activities-search/view-activities-search';
 import ViewActivitiesMain from './components/view-activities-main/view-activities-main';
+import ViewCarousel from './components/view-carousel/view-carousel';
 
 let app = angular.module('app', [
     uiRouter,
@@ -58,7 +59,8 @@ let app = angular.module('app', [
     ViewActivityJoin.name,
     ViewRegister.name,
     ViewActivitiesSearch.name,
-    ViewActivitiesMain.name
+    ViewActivitiesMain.name,
+    ViewCarousel.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');
