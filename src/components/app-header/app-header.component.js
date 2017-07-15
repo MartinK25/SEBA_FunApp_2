@@ -47,7 +47,11 @@ class AppHeaderComponentController{
     }
 
     goCreateActivity(){
-        this.$state.go('createActivity',{});
+        if (this.UserService.isAuthenticated()) {
+            this.$state.go('createActivity',{});
+        } else {
+            this.$state.go('login',{});
+        }
     }
 
     goSearchActivities(){

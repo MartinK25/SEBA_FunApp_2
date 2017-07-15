@@ -5,17 +5,17 @@
         <form name="activityForm">
             <md-input-container class="md-icon-float md-block">
                 <label>Name</label>
-                <md-icon><ng-md-icon icon="name" ></ng-md-icon></md-icon>
+                <md-icon><ng-md-icon icon="text_format" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.name" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Type</label>
-                <md-icon><ng-md-icon icon="type" ></ng-md-icon></md-icon>
+                <md-icon><ng-md-icon icon="dashboard" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.type" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>City</label>
-                <md-icon><ng-md-icon icon="city" ></ng-md-icon></md-icon>
+                <md-icon><ng-md-icon icon="location_city" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.city" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
@@ -23,10 +23,9 @@
                 <md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.activity.location" type="text">
             </md-input-container>
-
+            <md-input-container class="md-icon-float md-block">
             <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
-
-
+            </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Time</label>
                 <md-icon><ng-md-icon icon="schedule" ></ng-md-icon></md-icon>

@@ -6,7 +6,7 @@
 import template from './view-activities.template.html';
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';
-/*import './view-activities.style.css';*/
+import './view-activities.style.css';
 
 
 
@@ -76,8 +76,10 @@ class ViewActivitiesComponentController{
     };
 
     getPictureUrl(activity) {
-        console.log("./../../img/style/{{activity.type}}/test.jpg");
-        return("./../../img/style/sports.jpg");
+        let pic = activity['type'];
+        /*console.log('./../../img/style/' + pic + '.jpg');*/
+        console.log('./images/' + pic + '.jpg');
+        return('./images/' + pic + '.jpg');
 
     }
 

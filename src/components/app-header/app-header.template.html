@@ -46,8 +46,10 @@
                         <md-icon md-menu-align-target><ng-md-icon icon="login" ></ng-md-icon></md-icon>
                         Login
                     </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="!$ctrl.isAuthenticated()">
                     <md-button ng-click="$ctrl.register($event)">
-                        <md-icon md-menu-align-target><ng-md-icon icon="register" ></ng-md-icon></md-icon>
+                        <md-icon md-menu-align-target><ng-md-icon icon="flight_takeoff" ></ng-md-icon></md-icon>
                         Register
                     </md-button>
                 </md-menu-item>

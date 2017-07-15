@@ -9,7 +9,7 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content layout="row" layout-align="space-between">
-            <div class="md-media-xl card-media"></div>
+            <div class="thumbnails"></div>
             <p>
 
                 <img ng-src="{{$ctrl.getPictureUrl(activity)}}"/>
@@ -33,6 +33,45 @@
         </md-card-content>
     </md-card>
 <!-- </md-content> -->
+
+    <section class="thumbnails">
+        <div>
+            <a href="">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3>Jogging</h3>
+                <md-button class="md-icon-button" aria-label="Join Activity" ng-click="$ctrl.join(activity)">
+                    <md-icon md-svg-src="./../../img/icons/Join.svg"></md-icon>
+            </a>
+            <a href="images/fulls/02.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3>Yoga</h3>
+            </a>
+        </div>
+        <div>
+            <a href="images/fulls/03.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3>Hiking</h3>
+            </a>
+            <a href="images/fulls/04.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3> </h3>
+            </a>
+            <a href="images/fulls/05.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3> </h3>
+            </a>
+        </div>
+        <div>
+            <a href="images/fulls/06.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3>Climbing</h3>
+            </a>
+            <a href="images/fulls/07.jpg">
+                <img src="../../img/style/Sports.jpg" alt="" />
+                <h3> </h3>
+            </a>
+        </div>
+    </section>
 </div>
 
 <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Activity" ng-click="$ctrl.newActivity()">
