@@ -50,6 +50,7 @@
     "ng-table": "^3.0.1",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
+    "swiper": "^3.4.2",
     "ui-bootstrap": "^0.1.10"
   },
   "engines": {

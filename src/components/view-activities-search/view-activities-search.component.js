@@ -64,7 +64,7 @@ class ViewActivitiesSearchComponentController{
             this.$state.go('login',{});
         }
 
-    }
+    };
 
 
     delete(activity) {
@@ -79,6 +79,10 @@ class ViewActivitiesSearchComponentController{
         } else {
             this.$state.go('login',{});
         }
+    };
+
+    isAuthenticated(){
+        return this.UserService.isAuthenticated();
     };
 
 

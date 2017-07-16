@@ -1,3 +1,6 @@
+/**
+ * Created by martin on 06.07.2017.
+ */
 'use strict';
 
 import angular from 'angular';

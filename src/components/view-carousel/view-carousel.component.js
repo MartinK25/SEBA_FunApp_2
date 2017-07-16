@@ -1,10 +1,9 @@
-/**
- * Created by martin on 15.07.2017.
- */
 'use strict';
 
 import template from './view-carousel.template.html';
-
+import './view-carousel.style.css';
+import './swiper.min.css';
+import Swiper from 'swiper';
 
 class ViewCarouselComponent {
     constructor(){
@@ -15,66 +14,47 @@ class ViewCarouselComponent {
     static get name() {
         return 'viewCarousel';
     }
+
 }
 
 class ViewCarouselComponentController{
     constructor($state){
         this.$state = $state;
-        $scope.myInterval = 5000;
-        $scope.noWrapSlides = false;
-        $scope.active = 0;
-        var slides = $scope.slides = [];
-        var currIndex = 0;
+
     }
 
+    $onInit() {
+        new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            autoplay: 2000,
+            watchSlidesProgress: true,
+            coverflow: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true
+            },
+            paginationType: 'bullets',
 
-    addSlide (){
-        var newWidth = 600 + slides.length + 1;
-        slides.push({
-            image: '//unsplash.it/' + newWidth + '/300',
-            text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
-            id: currIndex++
+
+            pagination: '.swiper-pagination',
+
+
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+
+            scrollbar: '.swiper-scrollbar',
         });
-    };
-
-    $scope.randomize = function() {
-        var indexes = generateIndexesArray();
-        assignNewIndexesToSlides(indexes);
-    };
-
-    for (var i = 0; i < 4; i++) {
-        $scope.addSlide();
     }
 
-    // Randomize logic below
-
-    function assignNewIndexesToSlides(indexes) {
-        for (var i = 0, l = slides.length; i < l; i++) {
-            slides[i].id = indexes.pop();
-        }
+    static get $inject(){
+        return ['$state'];
     }
 
-    function generateIndexesArray() {
-        var indexes = [];
-        for (var i = 0; i < currIndex; ++i) {
-            indexes[i] = i;
-        }
-        return shuffle(indexes);
-    }
+}
 
-    // http://stackoverflow.com/questions/962802#962890
-    function shuffle(array) {
-        var tmp, current, top = array.length;
-
-        if (top) {
-            while (--top) {
-                current = Math.floor(Math.random() * (top + 1));
-                tmp = array[current];
-                array[current] = array[top];
-                array[top] = tmp;
-            }
-        }
-
-        return array;
-    }
-});
+export default ViewCarouselComponent;

@@ -26,7 +26,7 @@ class ViewActivityEditComponentController{
     constructor($state, ActivityService){
         this.model = {};
         this.$state = $state;
-        this.MoviesService = ActivityService;
+        this.ActivityService = ActivityService;
     }
 
     $onInit() {
@@ -42,7 +42,7 @@ class ViewActivityEditComponentController{
     save() {
         let _id = this.activity['_id'];
 
-        this.MoviesService.update(this.model).then(data => {
+        this.ActivityService.update(this.model).then(data => {
             this.activity = JSON.parse(JSON.stringify(data));
 
             this.$state.go('activity',{ activityId:_id});

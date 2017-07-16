@@ -10,6 +10,7 @@ import ActivityJoinComponent from './../components/view-activity-join/view-activ
 import RegisterComponent from './../components/view-register/view-register.component';
 import ActivitiesSearchComponent from './../components/view-activities-search/view-activities-search.component';
 import ActivitiesMainComponent from './../components/view-activities-main/view-activities-main.component';
+import CarouselComponent from './../components/view-carousel/view-carousel.component';
 
 import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';

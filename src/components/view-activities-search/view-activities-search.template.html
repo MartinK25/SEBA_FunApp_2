@@ -1,5 +1,5 @@
 <h2>All activities</h2>
-$state.params.type
+
 <form>
     <div class="form-group">
         <div class="input-group">
@@ -28,8 +28,15 @@ $state.params.type
         <td>{{activity.date}}</td>
         <td>{{activity.time}}</td>
         <td>
-            <a ui-sref="edit({id:activity._id})">Edit</a> |
-            <a href="#" ng-click="deleteUser(activity._id)">Delete</a>
+            <md-button class="md-icon-button" aria-label="Details" ng-click="$ctrl.details(activity)">
+                <md-icon md-svg-src="./../../img/icons/Details.svg"></md-icon>
+            </md-button>
+            <md-button ng-if="$ctrl.isAuthenticated()" class="md-icon-button" aria-label="Edit" ng-click="$ctrl.edit(activity)">
+                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+            </md-button>
+            <md-button ng-if="$ctrl.isAuthenticated()" class="md-icon-button" aria-label="Edit" ng-click="$ctrl.delete(activity)">
+                <md-icon><ng-md-icon icon="delete"></ng-md-icon></md-icon>
+            </md-button>
         </td>
     </tr>
 </table>
