@@ -2,38 +2,46 @@
     <md-content class="md-no-momentum">
         <h1> {{$ctrl.activity.title}} </h1>
         <br/>
-        <form name="activityForm">
+        <form name="$ctrl.activityForm" ng-submit="$ctrl.save()" novalidate class="form-horizontal">
             <md-input-container class="md-icon-float md-block">
                 <label>Name</label>
                 <md-icon><ng-md-icon icon="text_format" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.activity.name" type="text">
+                <input ng-model="$ctrl.activity.name" type="text" ng-required="true" class="form-control" name="name">
+                <p ng-show="$activityForm.name.$error.required && ($activityForm.$submitted || $activityForm.name.$dirty)" class="text-danger">Please Enter Name</p>
             </md-input-container>
             <md-input-container class="md-icon-float">
                 <label>Type</label>
                 <md-icon><ng-md-icon icon="dashboard" ></ng-md-icon></md-icon>
-                <md-select ng-model="$ctrl.activity.type">
-                    <md-option ng-repeat="type in $ctrl.types" ng-value="type">
+                <md-select ng-model="$ctrl.activity.type" ng-required="true" name="type">
+                    <md-option ng-repeat="type in $ctrl.types" ng-value="type" >
                         {{type}}
                     </md-option>
+                    <p ng-show="activityForm.type.$error.required && (activityForm.$submitted || activityForm.type.$dirty)" class="text-danger">Please Enter Activity-Type</p>
+
                 </md-select>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>City</label>
                 <md-icon><ng-md-icon icon="location_city" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.activity.city" type="text">
+                <input ng-model="$ctrl.activity.city" type="text" ng-required="true" class="form-control" name="city">
+                <p ng-show="activityForm.city.$error.required && (activityForm.$submitted || activityForm.city.$dirty)" class="text-danger">Please Enter City</p>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Location</label>
                 <md-icon><ng-md-icon icon="location_on"></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.activity.location" type="text">
+                <input ng-model="$ctrl.activity.location" type="text" ng-required="true" class="form-control" name="location">
+                <p ng-show="activityForm.location.$error.required && (activityForm.$submitted || activityForm.location.$dirty)" class="text-danger">Please Enter Location</p>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-            <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+            <md-datepicker ng-model="$ctrl.activity.date" md-placeholder="Enter date" md-open-on-focus ng-required="true" name="date"></md-datepicker>
+                <p ng-show="activityForm.date.$error.required && (activityForm.$submitted || activityForm.date.$dirty)" class="text-danger">Please Enter Date</p>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Time</label>
                 <md-icon><ng-md-icon icon="schedule" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.activity.time" type="text">
+                <input ng-model="$ctrl.activity.time" type="text" ng-required="true" class="form-control" name="time">
+                <p ng-show="activityForm.time.$error.required && (activityForm.$submitted || activityForm.time.$dirty)" class="text-danger">Please Enter Time</p>
+
             </md-input-container>
             <!--
             <md-input-container class="md-block">
@@ -43,7 +51,7 @@
             -->
             <div layout="row">
                 <span flex></span>
-                <md-button class="md-raised md-primary" type="submit" ng-click="$ctrl.save()">Save</md-button>
+                <md-button class="md-raised md-primary" type="submit">Save</md-button>
                 <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
             </div>
 

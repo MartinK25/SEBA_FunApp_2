@@ -36,13 +36,17 @@ class ViewActivityCreateComponentController{
     };
 
     save() {
-        let user = this.UserService.getCurrentUser();
+        if (this.activityForm.$valid) {
+            let user = this.UserService.getCurrentUser();
 
-        this.activity['user'] = user['_id'];
-        this.ActivityService.create(this.activity).then(data => {
-            let _id = data['_id'];
-            this.$state.go('activities',{ activityId:_id});
-        });
+            this.activity['user'] = user['_id'];
+            this.ActivityService.create(this.activity).then(data => {
+                let _id = data['_id'];
+                this.$state.go('activities', {activityId: _id});
+
+            })
+        }
+        ;
 
     };
 
