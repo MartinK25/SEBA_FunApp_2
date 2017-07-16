@@ -34,68 +34,9 @@ class ViewActivitiesComponentController{
 
     }
 
-    details (activity) {
-        /*let _id = activity['_id'];*/
-        let _id = activity['_id'];
-        this.$state.go('activity',{ activityId: _id});
-    };
-
-    join (activity) {
-
-        if (this.UserService.isAuthenticated()) {
-            let _id = activity['_id'];
-            this.$state.go('joinActivity',{ activityId:_id});
-        } else {
-            this.$state.go('login',{});
-        }
-    };
-
-
-    edit (activity) {
-
-        if (this.UserService.isAuthenticated()) {
-            let _id = activity['_id'];
-            this.$state.go('editActivity',{ activityId:_id});
-        } else {
-            this.$state.go('login',{});
-        }
-    };
-
-    newActivity(){
-
-        if (this.UserService.isAuthenticated()) {
-            this.$state.go('activityAdd',{});
-        } else {
-            this.$state.go('login',{});
-        }
-
-    };
 
     isAuthenticated(){
         return this.UserService.isAuthenticated();
-    };
-
-    getPictureUrl(activity) {
-        let pic = activity['type'];
-        /*console.log('./../../img/style/' + pic + '.jpg');*/
-        console.log('./images/' + pic + '.jpg');
-        return('./images/' + pic + '.jpg');
-
-    };
-
-
-    delete(activity) {
-        if (this.UserService.isAuthenticated()) {
-            let _id = activity['_id'];
-
-            this.ActivitiesService.delete(_id).then(response => {
-                let index = this.activities.map(x => x['_id']).indexOf(_id);
-                this.activities.splice(index, 1);
-            })
-
-        } else {
-            this.$state.go('login',{});
-        }
     };
 
     goType (type) {

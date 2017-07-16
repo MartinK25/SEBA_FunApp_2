@@ -57,16 +57,6 @@ class ViewActivitiesMainComponentController{
          } */
     };
 
-    newActivity(){
-
-        if (this.UserService.isAuthenticated()) {
-            this.$state.go('activityAdd',{});
-        } else {
-            this.$state.go('login',{});
-        }
-
-    }
-
 
     delete(activity) {
         if (this.UserService.isAuthenticated()) {

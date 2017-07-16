@@ -42,10 +42,6 @@ class AppHeaderComponentController{
     }
 
 
-    goHome(){
-        this.$state.go('movies',{});
-    }
-
     goCreateActivity(){
         if (this.UserService.isAuthenticated()) {
             this.$state.go('createActivity',{});

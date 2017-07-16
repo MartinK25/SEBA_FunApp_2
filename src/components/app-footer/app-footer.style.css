@@ -1,5 +1,6 @@
 footer {
     max-height: 35px ;
+    background-color: azure;
 }
 
 footer > div > p {

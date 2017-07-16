@@ -27,6 +27,7 @@ class ViewActivityEditComponentController{
         this.model = {};
         this.$state = $state;
         this.ActivityService = ActivityService;
+        this.types = ['Jogging','Climbing','Cycling','Hiking','Dancing','Soccer','Skiing','Music','Other'];
     }
 
     $onInit() {

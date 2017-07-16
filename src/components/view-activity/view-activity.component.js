@@ -60,18 +60,8 @@ class ViewActivityComponentController{
 
 
     getPosterURL(){
-        let posterURL = 'http://placehold.it/32x32';
-        if (this.activity.hasOwnProperty('posters')) {
-            if (this.activity.posters.hasOwnProperty('thumbnail')) {
-                posterURL = this.activity.posters.thumbnail;
-            } else if (this.activity.posters.hasOwnProperty('profile')) {
-                posterURL = this.activity.posters.profile;
-            } else if (this.activity.posters.hasOwnProperty('detailed')) {
-                posterURL = this.activity.posters.detailed;
-            } else {
-                posterURL = this.activity.posters.original;
-            }
-        }
+        let type = this.activity.type;
+        let posterURL = './../../images/' + type + '.jpg';
         return posterURL;
     }
 
