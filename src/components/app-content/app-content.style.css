@@ -1,4 +1,6 @@
 
 md-content {
-    background-image: image("./../../images/bg.jpg");
+
+    background-size: cover;
+    background-position: top center;
 }

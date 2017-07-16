@@ -1,6 +1,5 @@
 md-card {
-    background-color: #e3fffc;
-    background-image: url("./../../img/style/bg.jpg");
+    background-color: rgba(118, 63, 181, 0.07);
     background-size: cover;
     background-position: top center;
 }

@@ -5,7 +5,6 @@
 
 import template from './view-activity-create.template.html';
 
-/*import MoviesService from './../../services/activitys/activitys.service';*/
 /*Add activity service*/
 import ActivityService from './../../services/activity/activity.service';
 import UserService from './../../services/user/user.service';

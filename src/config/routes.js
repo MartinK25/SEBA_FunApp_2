@@ -12,21 +12,9 @@ import ActivitiesSearchComponent from './../components/view-activities-search/vi
 import ActivitiesMainComponent from './../components/view-activities-main/view-activities-main.component';
 import CarouselComponent from './../components/view-carousel/view-carousel.component';
 
-import MoviesService from './../services/movies/movies.service';
 import ActivityService from './../services/activity/activity.service';
 
 
-resolveMovie.$inject = ['$stateParams', MoviesService.name];
-function resolveMovie($stateParams,moviesService){
-    return moviesService.get($stateParams.movieId);
-}
-/*
-resolveMovies.$inject = [MoviesService.name];
-function resolveMovies(moviesService){
-    return moviesService.list();
-}*/
-
-/* think not working:*/
 resolveActivity.$inject = ['$stateParams', ActivityService.name];
 function resolveActivity($stateParams,activityService){
     return activityService.get($stateParams.activityId);
@@ -40,17 +28,10 @@ function resolveActivities(activityService){
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
 export default function config ($stateProvider, $urlRouterProvider){
 
-    // For any unmatched url, redirect to /home
+
     $urlRouterProvider.otherwise("/activities");
 
     $stateProvider
-        /*.state('movies', {
-            url: '/movies',
-            component: MoviesComponent.name,
-            resolve: {
-                movies : resolveMovies
-            }
-        })*/
         .state('activities', {
             url: '/activities',
             component: ActivitiesComponent.name,

@@ -20,19 +20,28 @@ class ViewCarouselComponent {
 class ViewCarouselComponentController{
     constructor($state){
         this.$state = $state;
+        this.counter = 0;
 
     }
 
     $onInit() {
+
+        /*if (this.counter == 0){
+            let counter = 0;
+        }
+        this.counter = this.counter + 1;*/
+        this.counter = this.counter + 1;
+        console.log(this.counter);
+        console.log('initswiper');
         new Swiper ('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
             loop: true,
             autoplay: 2000,
             watchSlidesProgress: true,
-            coverflow: {
-                rotate: 50,
-                stretch: 0,
+           coverflow: {
+                    rotate: 50,
+                    stretch: 0,
                 depth: 100,
                 modifier: 1,
                 slideShadows : true
@@ -40,14 +49,9 @@ class ViewCarouselComponentController{
             paginationType: 'bullets',
 
 
-            pagination: '.swiper-pagination',
-
-
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
 
-
-            scrollbar: '.swiper-scrollbar',
         });
     }
 
